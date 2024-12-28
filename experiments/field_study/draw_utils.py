@@ -14,8 +14,8 @@ from typing import List
 import cv2
 from Levenshtein import distance as levenshtein_distance
 from itertools import cycle
-os.environ['HTTP_PROXY'] = 'http://127.0.0.1:7890'
-os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:7890'
+# os.environ['HTTP_PROXY'] = 'http://127.0.0.1:7890'
+# os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:7890'
 
 def draw_annotated_image_nobox(image: Image.Image, txt: str):
     # Convert the image to RGBA for transparent overlay

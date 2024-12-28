@@ -1,0 +1,19 @@
+
+<html lang="en">
+<head>
+<link href="&#x2f;frame&#x2f;static&#x2f;v4&#x2f;App.css&#x3f;v&#x3d;ecc2d" rel="stylesheet" />
+<!-- Set latest compatibility for IE -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="uses-app-background">
+<div class="app"></div>
+<script type="text/json" id="error-data">null</script>
+<script type="text/json" id="base-data">{"brand": {"company": "Duo Security", "desktop": "Duo Desktop", "mobile": "Duo Mobile", "id": "duo", "website_root": "https://duo.com", "product": "Duo", "push": "Duo Push"}, "help_url": "https://guide.duo.com/traditional-enrollment", "logo": {"logo_link": "/frame/prompt?sid=frameless-cad586d0-ce02-4925-a910-5fe3f3b5711c", "logo_alt_text": "Texas A&M University Authentication", "logo_src": "https://ux-asset-commercial.duosecurity.com/customization/account/w-_aHmTBlvKyKLe0ihcEm6JIINN03ZqL6AzEZO98epI/logo_image.png?versionId=3GjmtPSzbam8.gLZD4hBlOVQ7GbtTx_o"}, "session_id": "frameless-cad586d0-ce02-4925-a910-5fe3f3b5711c", "use_duo_branding": true, "const": {"factor_phone": "Phone Call", "factor_passcode": "Passcode", "factor_push": "Duo Push", "device_u2f": "u2f", "device_webauthn": "webauthn", "post_auth_add_device": "addDevice", "post_auth_manage_devices": "manageDevices", "os_families": ["Windows Phone", "Blackberry", "Mac OS X", "Windows", "iOS", "Android", "Linux", "Chrome OS", "Unknown Operating System"], "browser_families": ["Safari", "Chrome", "Firefox", "Internet Explorer", "Edge", "Mobile Safari", "Chrome Mobile", "Opera", "Opera Mobile", "Firefox Mobile", "Unknown", "Edge Chromium", "Edge Chromium Mobile"], "software_family_chrome": "Chrome"}, "is_new_user": false, "show_self_service_links": false, "helpdesk_message": "\u0022Please reach out to Technology Services Help Desk Central at (979) 845-8300 for assistance with Duo, especially if you have lost your Duo device.\u0022", "is_in_oidc_flow": true, "xsrf_token": "d4be7867efd64e528148d1c6c0ea1224", "style": {"app_background_url": "https://ux-asset-commercial.duosecurity.com/customization/account/w-_aHmTBlvKyKLe0ihcEm6JIINN03ZqL6AzEZO98epI/background_image.png?versionId=0woNiiYC8sJjhkfj.vQAFUeEEe.i0Fph", "app_background_color": "#FFFFFF", "accent_color": "#500000", "asset_base_url": "ux-asset-commercial.duosecurity.com"}, "helpdesk_links": ["https://it.tamu.edu/help"], "is_in_global_device_management": false, "hostname": "c202ffdc7c7609fcc48339bb43bb5e227faeeb981732b468c023fb57149cbad1,8ef305bb", "features": {"has_webauthn_browser_expansion_feature": true, "has_hostname_validation_feature": false, "has_auto_selection_feature": true, "has_device_filter_feature": true, "has_iframed_up_blocking_feature": true, "has_session_trust_analysis_feature": false, "has_ssp_shutoff_feature": false, "has_mfa_bypass_factor_policy_feature": false}, "session_trace": "ce73a043e4f01aefdd60d8d1", "can_offer_new_device_flow": false, "is_in_dmp_integration": false, "akey": "DA85ZIPKLQC3HFNUHR7E", "session_trust_extension_id": "", "session_seconds_remaining": 695, "can_offer_new_phone_flow": true}</script>
+<script id="translations" type="text/json">
+{"locale_data": {"js-messages": {"": {"domain": "js-messages", "lang": "en", "plural_forms": "nplurals=2; plural=(n != 1);"}}}, "domain": "js-messages"}
+</script>
+<script id="browser_exceptions" src="&#x2f;frame&#x2f;static&#x2f;shared&#x2f;js&#x2f;errors.js&#x3f;v&#x3d;d10d2" data-url="/frame/browser_exceptions"></script>
+<script src="&#x2f;frame&#x2f;static&#x2f;v4&#x2f;App.js&#x3f;v&#x3d;b1c7c"></script>
+</body>
+</html>

@@ -13,3 +13,6 @@ expand_targetlist/
 *adv.py
 *_benign*.py
 *dynaphish*.py
+__pycache__/
+datasets/openai_key.txt
+datasets/google_api_key.txt

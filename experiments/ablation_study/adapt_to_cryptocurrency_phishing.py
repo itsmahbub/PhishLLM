@@ -31,15 +31,15 @@ if __name__ == '__main__':
     phishintention_cls = PhishIntentionWrapper()
     llm_cls = TestVLM(phishintention_cls,
                       param_dict=param_dict,
-                      proxies={"http": "http://127.0.0.1:7890",
-                               "https": "http://127.0.0.1:7890",
+                      proxies={"http": None, # "http://127.0.0.1:7890",
+                               "https": None, # "http://127.0.0.1:7890",
                                }
                       )
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    openai.proxy = "http://127.0.0.1:7890" # proxy
+    openai.proxy = None # "http://127.0.0.1:7890" # proxy
 
     sleep_time = 3; timeout_time = 60
-    driver = CustomWebDriver.boot(proxy_server="127.0.0.1:7890")  # Using the proxy_url variable
+    driver = CustomWebDriver.boot(proxy_server= None) # "127.0.0.1:7890")  # Using the proxy_url variable
     driver.set_script_timeout(timeout_time)
     driver.set_page_load_timeout(timeout_time)
 

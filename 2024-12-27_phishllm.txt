@@ -1,0 +1,4 @@
+folder	phish_prediction	target_prediction	brand_recog_time	crp_prediction_time	crp_transition_time
+facebook.com	benign	None	0.8820390701293945	0	0
+faceb0ok.com	phish	facebook.com	0.9127569198608398	0.8911399841308594	0
+api-7af2c673.duosecurity.com	benign	None	0.810528039932251	1.3781559467315674	0

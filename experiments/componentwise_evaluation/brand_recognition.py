@@ -75,7 +75,7 @@ def test_check_precision(result_file):
 
 if __name__ == '__main__':
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    proxy_url = "http://127.0.0.1:7890"
+    proxy_url = None # "http://127.0.0.1:7890"
     openai.proxy = proxy_url  # proxy
 
     with open('./param_dict.yaml') as file:

@@ -7,12 +7,12 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from textwrap import wrap
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-os.environ['http_proxy'] = "http://127.0.0.1:7890"
-os.environ['https_proxy'] = "http://127.0.0.1:7890"
+# os.environ['http_proxy'] = "http://127.0.0.1:7890"
+# os.environ['https_proxy'] = "http://127.0.0.1:7890"
 
 if __name__ == '__main__':
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    openai.proxy = "http://127.0.0.1:7890" # proxy
+    openai.proxy = None # "http://127.0.0.1:7890" # proxy
 
     with open('./param_dict.yaml') as file:
         param_dict = yaml.load(file, Loader=yaml.FullLoader)

@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Module in phishllm",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.infer.test",
+            "args": ["--folder", "./datasets/tests"],
+            "python": "/Users/mahbub/miniforge3/envs/phishllm/bin/python",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

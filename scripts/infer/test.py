@@ -34,7 +34,7 @@ if __name__ == '__main__':
                                })
     openai.api_key = os.getenv("OPENAI_API_KEY")
     openai.proxy = proxy_url # set openai proxy
-
+    
     # boot driver
     driver = CustomWebDriver.boot(proxy_server=proxy_url)  # Using the proxy_url variable
     driver.set_script_timeout(param_dict['rank']['script_timeout'])
@@ -81,7 +81,7 @@ if __name__ == '__main__':
                                                                                                                 html_path=html_path,
                                                                                                                 driver=driver,
                                                                                                                 )
-                driver.delete_all_cookies()
+                # driver.delete_all_cookies()
                 break
 
             except (WebDriverException) as e:

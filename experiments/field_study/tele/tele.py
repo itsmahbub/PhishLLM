@@ -8,7 +8,7 @@ from telegram.error import RetryAfter
 from telegram.ext.dispatcher import run_async
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 import time
-REQUEST_KWARGS = {"proxy_url": "http://127.0.0.1:7890"}
+REQUEST_KWARGS = {"proxy_url": None} # "http://127.0.0.1:7890"}
 
 class teleBot():
     def __init__(self):

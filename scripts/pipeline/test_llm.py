@@ -23,8 +23,9 @@ urllib3.disable_warnings()
 http = urllib3.PoolManager(maxsize=10)  # Increase the maxsize to a larger value, e.g., 10
 
 os.environ['OPENAI_API_KEY'] = open('./datasets/openai_key.txt').read().strip()
+# os.environ['CURL_CA_BUNDLE'] = './huggingface.co.pem'
+# os.environ['REQUESTS_CA_BUNDLE'] = './huggingface.co.pem'
 os.environ['CURL_CA_BUNDLE'] = ''
-
 
 class TestLLM():
 
@@ -165,7 +166,7 @@ class TestLLM():
                 width, height = img.size
                 new_width = int(width)
                 new_height = int(height)
-                resized_img = img.resize((new_width, new_height), Image.ANTIALIAS)
+                resized_img = img.resize((new_width, new_height), PIL.Image.LANCZOS)
 
                 # Save the resized image to a temporary path
                 temp_path = "/tmp/resized_image.png"
@@ -514,7 +515,7 @@ class TestLLM():
             except Exception as e:
                 print(e)
                 driver.quit()
-                driver = CustomWebDriver.boot(proxy_server="127.0.0.1:7890")
+                driver = CustomWebDriver.boot(proxy_server=None)#"127.0.0.1:7890")
                 driver.set_script_timeout(self.rank_driver_script_timeout)
                 driver.set_page_load_timeout(self.rank_driver_page_load_timeout)
                 return [], [], driver, clip_pred_time
@@ -545,7 +546,7 @@ class TestLLM():
             except (MaxRetryError, WebDriverException, TimeoutException) as e:
                 PhishLLMLogger.spit(e, caller_prefix=PhishLLMLogger._caller_prefix, debug=True)
                 driver.quit()
-                driver = CustomWebDriver.boot(proxy_server="127.0.0.1:7890")
+                driver = CustomWebDriver.boot(proxy_server=None)#"127.0.0.1:7890")
                 driver.set_script_timeout(self.rank_driver_script_timeout)
                 driver.set_page_load_timeout(self.rank_driver_page_load_timeout)
                 driver.get(url)
@@ -1131,16 +1132,16 @@ if __name__ == '__main__':
     phishintention_cls = PhishIntentionWrapper()
     llm_cls = TestLLM(phishintention_cls,
                       param_dict=param_dict,
-                      proxies={"http": "http://127.0.0.1:7890",
-                               "https": "http://127.0.0.1:7890",
+                      proxies={"http": None, # "http://127.0.0.1:7890",
+                               "https": None, # "http://127.0.0.1:7890",
                                }
                       )
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    openai.proxy = "http://127.0.0.1:7890" # proxy
+    openai.proxy = None # "http://127.0.0.1:7890" # proxy
     web_func = WebUtil()
 
     sleep_time = 3; timeout_time = 60
-    driver = CustomWebDriver.boot(proxy_server="127.0.0.1:7890")  # Using the proxy_url variable
+    driver = CustomWebDriver.boot(proxy_server=None) # "127.0.0.1:7890")  # Using the proxy_url variable
     driver.set_script_timeout(timeout_time / 2)
     driver.set_page_load_timeout(timeout_time)
 #

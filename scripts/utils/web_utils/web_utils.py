@@ -164,7 +164,7 @@ class CustomWebDriver(webdriver.Chrome):
 
     def __init__(self, proxy_server=None, *args, **kwargs):
         chrome_options = ChromeOptions()
-        chrome_options.binary_location = "/usr/bin/google-chrome"
+        chrome_options.binary_location = "/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome"
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument('--disable-gpu')

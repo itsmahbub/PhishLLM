@@ -6,8 +6,8 @@ from scripts.utils.web_utils.web_utils import is_valid_domain
 from scripts.pipeline.test_llm import TestLLM
 import yaml
 os.environ['OPENAI_API_KEY'] = open('./datasets/openai_key.txt').read().strip()
-os.environ['http_proxy'] = "http://127.0.0.1:7890"
-os.environ['https_proxy'] = "http://127.0.0.1:7890"
+# os.environ['http_proxy'] = "http://127.0.0.1:7890"
+# os.environ['https_proxy'] = "http://127.0.0.1:7890"
 # def list_correct(result_file):
 #     correct = []
 #     result_lines = open(result_file).readlines()
@@ -48,7 +48,7 @@ os.environ['https_proxy'] = "http://127.0.0.1:7890"
 
 if __name__ == '__main__':
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    openai.proxy = "http://127.0.0.1:7890" # proxy
+    openai.proxy = None # "http://127.0.0.1:7890" # proxy
 
 
     with open('./param_dict.yaml') as file:
@@ -76,8 +76,8 @@ if __name__ == '__main__':
     phishintention_cls = PhishIntentionWrapper()
     llm_cls = TestLLM(phishintention_cls,
                       param_dict=param_dict,
-                      proxies={"http": "http://127.0.0.1:7890",
-                               "https": "http://127.0.0.1:7890",
+                      proxies={"http": None, # "http://127.0.0.1:7890",
+                               "https": None, # "http://127.0.0.1:7890",
                                }
                       )
 

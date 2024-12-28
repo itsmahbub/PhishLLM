@@ -44,7 +44,7 @@ function install_chrome {
 }
 
 
-declare -A browsers
+declare -a browsers
 browsers=(["google-chrome-stable"]=install_chrome)
 
 function check_browsers {
@@ -79,14 +79,14 @@ function check_browsers {
 # Install chrome binary
 #check_browsers
 
-# Create a new conda environment with Python 3.8
+# Create a new conda environment with Python 3.10
 # Check if the environment already exists
 conda info --envs | grep -w "$ENV_NAME" > /dev/null
 if [ $? -eq 0 ]; then
     echo "Activating Conda environment $ENV_NAME"
 else
-    echo "Creating and activating new Conda environment $ENV_NAME with Python 3.8"
-    conda create -n "$ENV_NAME" python=3.8
+    echo "Creating and activating new Conda environment $ENV_NAME with Python 3.10"
+    conda create -n "$ENV_NAME" python=3.10
 fi
 
 PACKAGE_NAME="phishintention"
@@ -100,7 +100,7 @@ elif [ -d "PhishIntention" ]; then
     cd ../
     rm -rf PhishIntention
 else
-    git clone -b development --single-branch https://github.com/lindsey98/PhishIntention.git
+    git clone -b development --single-branch https://github.com/itsmahbub/PhishIntention.git
     cd PhishIntention
     chmod +x ./setup.sh
     export ENV_NAME="$ENV_NAME" && ./setup.sh
@@ -117,6 +117,18 @@ else # cpu-only
 fi
 conda run -n "$ENV_NAME" pip install "paddleocr>=2.0.1"
 
+# Install decord
+# brew install cmake ffmpeg@4
+# brew link ffmpeg@4
+git clone --recursive https://github.com/dmlc/decord
+cd decord
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
+cd ../python
+conda run -n "$ENV_NAME" python setup.py install
+cd ../../
+rm -rf decord
 # Install Image Captioning model
 PACKAGE_NAME="lavis"
 if conda list -n "$ENV_NAME" | grep -q "$PACKAGE_NAME"; then
