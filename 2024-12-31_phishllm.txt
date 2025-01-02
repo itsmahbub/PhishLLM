@@ -1,0 +1,2 @@
+folder	phish_prediction	target_prediction	brand_recog_time	crp_prediction_time	crp_transition_time
+ebl.com.bd	phish	easternbank.com	1.0349209308624268	1.1955337524414062	0

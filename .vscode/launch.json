@@ -6,7 +6,7 @@
             "type": "debugpy",
             "request": "launch",
             "module": "scripts.infer.test",
-            "args": ["--folder", "./datasets/tests"],
+            "args": ["--folder", "./datasets/playground"],
             "python": "/Users/mahbub/miniforge3/envs/phishllm/bin/python",
             "justMyCode": false,
             "env": {
